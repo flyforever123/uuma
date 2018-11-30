@@ -50,6 +50,74 @@ Use it to make something cool, have fun, and share what you've learned with othe
 1.0 Normalize
 Styles based on Normalize v5.0.0 @link https://github.com/necolas/normalize.css
 --------------------------------------------------------------*/
+@font-face {
+  	font-family: 'CircularStdBlack';
+  	src: url('./assets/fonts/CircularStd-Black.eot'); /* IE9 Compat Modes */
+  	src: url('./assets/fonts/CircularStd-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       	url('./assets/fonts/CircularStd-Black.woff') format('woff'), /* Pretty Modern Browsers */
+       	url('./assets/fonts/CircularStd-Black.ttf')  format('truetype'), /* Safari, Android, iOS */
+       	url('./assets/fonts/CircularStd-Black.svg#svgCircularStdBlack') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  	font-family: 'CircularStdBlackItalic';
+  	font-style: italic;
+  	src: url('./assets/fonts/CircularStd-BlackItalic.eot'); /* IE9 Compat Modes */
+  	src: url('./assets/fonts/CircularStd-BlackItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       	url('./assets/fonts/CircularStd-BlackItalic.woff') format('woff'), /* Pretty Modern Browsers */
+       	url('./assets/fonts/CircularStd-BlackItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       	url('./assets/fonts/CircularStd-BlackItalic.svg#svgCircularStdBlackItalic') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  	font-family: 'CircularStdBold';
+  	src: url('./assets/fonts/CircularStd-Bold.eot'); /* IE9 Compat Modes */
+  	src: url('./assets/fonts/CircularStd-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       	url('./assets/fonts/CircularStd-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       	url('./assets/fonts/CircularStd-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       	url('./assets/fonts/CircularStd-Bold.svg#svgCircularStdBold') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  	font-family: 'CircularStdBoldItalic';
+  	font-style: italic;
+  	font-weight: bold;
+  	src: url('./assets/fonts/CircularStd-BoldItalic.eot'); /* IE9 Compat Modes */
+  	src: url('./assets/fonts/CircularStd-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       	url('./assets/fonts/CircularStd-BoldItalic.woff') format('woff'), /* Pretty Modern Browsers */
+       	url('./assets/fonts/CircularStd-BoldItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       	url('./assets/fonts/CircularStd-BoldItalic.svg#svgCircularStdBoldItalic') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  	font-family: 'CircularStdBook';
+  	src: url('./assets/fonts/CircularStd-Book.eot'); /* IE9 Compat Modes */
+  	src: url('./assets/fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       	url('./assets/fonts/CircularStd-Book.woff') format('woff'), /* Pretty Modern Browsers */
+       	url('./assets/fonts/CircularStd-Book.ttf')  format('truetype'), /* Safari, Android, iOS */
+       	url('./assets/fonts/CircularStd-Book.svg#svgCircularStdBook') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  	font-family: 'CircularStdBookItalic';
+  	font-style: italic;
+  	src: url('./assets/fonts/CircularStd-BookItalic.eot'); /* IE9 Compat Modes */
+  	src: url('./assets/fonts/CircularStd-BookItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       	url('./assets/fonts/CircularStd-BookItalic.woff') format('woff'), /* Pretty Modern Browsers */
+       	url('./assets/fonts/CircularStd-BookItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       	url('./assets/fonts/CircularStd-BookItalic.svg#svgCircularStdBookItalic') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  	font-family: 'CircularStdMedium';
+  	src: url('./assets/fonts/CircularStd-Medium.eot'); /* IE9 Compat Modes */
+  	src: url('./assets/fonts/CircularStd-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       	url('./assets/fonts/CircularStd-Medium.woff') format('woff'), /* Pretty Modern Browsers */
+       	url('./assets/fonts/CircularStd-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       	url('./assets/fonts/CircularStd-Medium.svg#svgCircularStdMedium') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  	font-family: 'CircularStdMediumItalic';
+  	src: url('./assets/fonts/CircularStd-MediumItalic.eot'); /* IE9 Compat Modes */
+  	src: url('./assets/fonts/CircularStd-MediumItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       	url('./assets/fonts/CircularStd-MediumItalic.woff') format('woff'), /* Pretty Modern Browsers */
+       	url('./assets/fonts/CircularStd-MediumItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       	url('./assets/fonts/CircularStd-MediumItalic.svg#svgCircularStdMediumItalic') format('svg'); /* Legacy iOS */
+}
 
 html {
 	font-family: sans-serif;
@@ -1314,9 +1382,9 @@ a:hover .nav-title,
 --------------------------------------------------------------*/
 
 .navigation-top {
-	background: #fff;
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #eee;
+	/*background: #fff;*/
+	/*border-bottom: 1px solid #eee;
+	border-top: 1px solid #eee;*/
 	font-size: 16px;
 	font-size: 1rem;
 	position: relative;
@@ -1552,8 +1620,12 @@ body {
 }
 
 .site-header {
-	background-color: #fafafa;
-	position: relative;
+    background-color: transparent;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    width: 100%;
 }
 
 /* Site branding */
@@ -3678,7 +3750,7 @@ p > object:only-child {
 	/* Scroll down arrow */
 
 	.site-header .menu-scroll-down {
-		display: block;
+		/*display: block;*/
 		padding: 1em;
 		position: absolute;
 		right: 0;
@@ -4324,4 +4396,26 @@ p > object:only-child {
 	.site-footer {
 		padding: 0;
 	}
+}
+#top-menu {
+	float: right;
+}
+.navigation-top #top-menu a {
+	color: #FFF;
+}
+.navigation-top #top-menu a::after {
+	content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FFF;
+    transition: width .3s;
+}
+.navigation-top #top-menu .current-menu-item > a, .navigation-top #top-menu .current_page_item > a {
+	color: #272727;
+	background: #FFF;
+	border-radius: 15px;
+}
+.navigation-top #top-menu a:hover::after {
+    width: 100%;
 }

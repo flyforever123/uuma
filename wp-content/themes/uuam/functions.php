@@ -412,6 +412,7 @@ function uuam_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'uuam-fonts', uuam_fonts_url(), array(), null );
 	wp_enqueue_style( 'uuam-slick', get_theme_file_uri( '/assets/css/slick.css' ), array( 'uuam-style' ), '1.0' );
+	wp_enqueue_style( 'uuam-custom', get_theme_file_uri( '/assets/css/custom.css' ), array( 'uuam-style' ), '1.0' );
 	// Theme stylesheet.
 	wp_enqueue_style( 'uuam-style', get_stylesheet_uri() );
 
@@ -588,8 +589,8 @@ function homepage_slider( $atts ) {
 			$slideContainer .= '<div class="slideshow-page-header-slides">';
                	$slideContainer .= '<div class="section-container">';
                   	$slideContainer .= '<div class="row slideshow-page-header-row">';
-                     	$slideContainer .= '<div class="column small-medium-12 medium-9 large-6 small-padding-0x">';
-                     		$slideContainer .= '<h3 class="colour-body large-margin-bottom-1-5x" data-splitting="words">';
+                     	$slideContainer .= '<div class="column small-medium-9 medium-6 large-4 small-padding-0x slideshow-page-header-title">';
+                     		$slideContainer .= '<h3 class="large-margin-bottom-1-5x" data-splitting="words">';
                      			$slideContainer .= get_post_meta( get_the_ID(), "image_description", true );
                      		$slideContainer .= '</h3>';
                         	$slideContainer .= '<h1 class="large-margin-bottom-0-5x" data-splitting="words">';

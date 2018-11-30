@@ -14,7 +14,7 @@
 		$entryContent = $body.find( '.entry-content' ),
 		$formatQuote = $body.find( '.format-quote blockquote' ),
 		isFrontPage = $body.hasClass( 'uuam-front-page' ) || $body.hasClass( 'home blog' ),
-		navigationFixedClass = 'site-navigation-fixed',
+		navigationFixedClass = 'site-navigation-fixed1',
 		navigationHeight,
 		navigationOuterHeight,
 		navPadding,
