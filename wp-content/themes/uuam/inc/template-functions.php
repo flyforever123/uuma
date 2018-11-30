@@ -13,7 +13,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function twentyseventeen_body_classes( $classes ) {
+function uuam_body_classes( $classes ) {
 	// Add class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
@@ -26,12 +26,12 @@ function twentyseventeen_body_classes( $classes ) {
 
 	// Add class if we're viewing the Customizer for easier styling of theme options.
 	if ( is_customize_preview() ) {
-		$classes[] = 'twentyseventeen-customizer';
+		$classes[] = 'uuam-customizer';
 	}
 
 	// Add class on front page.
 	if ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) ) {
-		$classes[] = 'twentyseventeen-front-page';
+		$classes[] = 'uuam-front-page';
 	}
 
 	// Add a class if there is a custom header.
@@ -59,30 +59,30 @@ function twentyseventeen_body_classes( $classes ) {
 	}
 
 	// Get the colorscheme or the default if there isn't one.
-	$colors = twentyseventeen_sanitize_colorscheme( get_theme_mod( 'colorscheme', 'light' ) );
+	$colors = uuam_sanitize_colorscheme( get_theme_mod( 'colorscheme', 'light' ) );
 	$classes[] = 'colors-' . $colors;
 
 	return $classes;
 }
-add_filter( 'body_class', 'twentyseventeen_body_classes' );
+add_filter( 'body_class', 'uuam_body_classes' );
 
 /**
  * Count our number of active panels.
  *
  * Primarily used to see if we have any panels active, duh.
  */
-function twentyseventeen_panel_count() {
+function uuam_panel_count() {
 
 	$panel_count = 0;
 
 	/**
-	 * Filter number of front page sections in Twenty Seventeen.
+	 * Filter number of front page sections in Up Up Away Media.
 	 *
-	 * @since Twenty Seventeen 1.0
+	 * @since Up Up Away Media 1.0
 	 *
 	 * @param int $num_sections Number of front page sections.
 	 */
-	$num_sections = apply_filters( 'twentyseventeen_front_page_sections', 4 );
+	$num_sections = apply_filters( 'uuam_front_page_sections', 4 );
 
 	// Create a setting and control for each of the sections available in the theme.
 	for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
@@ -97,6 +97,6 @@ function twentyseventeen_panel_count() {
 /**
  * Checks to see if we're on the homepage or not.
  */
-function twentyseventeen_is_frontpage() {
+function uuam_is_frontpage() {
 	return ( is_front_page() && ! is_home() );
 }
