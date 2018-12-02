@@ -62,6 +62,7 @@ function uuam_setup() {
 	register_nav_menus( array(
 		'top'    => __( 'Top Menu', 'uuam' ),
 		'social' => __( 'Social Links Menu', 'uuam' ),
+		'footer' => __( 'Footer Menu', 'uuam' ),
 	) );
 
 	/*
@@ -575,9 +576,9 @@ function homepage_slider( $atts ) {
 		'meta_query'	=> array(
 			'relation'		=> 'AND',
 			array(
-				'key'		=> 'image_header',
-				'compare'	=> '!=',
-				'value'		=> '',
+				'key'		=> 'homepage_slider_image',
+				'compare'	=> '=',
+				'value'		=> '1',
 			)
 		)
 	);
@@ -589,7 +590,7 @@ function homepage_slider( $atts ) {
 			$slideContainer .= '<div class="slideshow-page-header-slides">';
                	$slideContainer .= '<div class="section-container">';
                   	$slideContainer .= '<div class="row slideshow-page-header-row">';
-                     	$slideContainer .= '<div class="column small-medium-9 medium-6 large-4 small-padding-0x slideshow-page-header-title">';
+                     	$slideContainer .= '<div class="column small-medium-9 medium-6 large-5 small-padding-0x slideshow-page-header-title">';
                      		$slideContainer .= '<h3 class="large-margin-bottom-1-5x" data-splitting="words">';
                      			$slideContainer .= get_post_meta( get_the_ID(), "image_description", true );
                      		$slideContainer .= '</h3>';
@@ -616,36 +617,130 @@ function homepage_slider( $atts ) {
 		endwhile;
 	endif;
 	if (!empty($slideContainer)) {
-		$htmlShortCode .= '<div class="section padding-0x">';
-		   $htmlShortCode .= '<div class="slideshow-page-header">';
-				$htmlShortCode .= '<div class="slideshow-page-header-container js-slideshow-slick" data-slideshow-type="slideshow-page-header">';
-					$htmlShortCode .= $slideContainer;
-				$htmlShortCode .= '</div>';
-				$htmlShortCode .= '<ul class="slideshow-page-header-dots js-slideshow-slick-pagination hide-for-large" data-slideshow-pagination="slideshow-page-header">';
-					$htmlShortCode .= $slidePagination;
-				$htmlShortCode .= '</ul>';
-				$htmlShortCode .= '<div class="slideshow-page-header-bottom">';
-					$htmlShortCode .= '<div class="section-container">';
-						$htmlShortCode .= '<div class="row margin-bottom-2x">';
-			               $htmlShortCode .= '<div class="column medium-12">';
-								$htmlShortCode .= '<nav class="slideshow-page-header-tabs js-slideshow-slick-pagination">';
-									$htmlShortCode .= '<ul data-slideshow-pagination="slideshow-page-header">';
-										$htmlShortCode .= $slideHeaderBottom;
-									$htmlShortCode .= '</ul>';
-								$htmlShortCode .= '</nav>';
-							$htmlShortCode .= '</div>';
-						$htmlShortCode .= '</div>';
-						$htmlShortCode .= '<div class="row align-center large-margin-bottom-1x">';
-							$htmlShortCode .= '<a href="#" class="header-scroll-icon">Scroll Down</a>';
-						$htmlShortCode .= '</div>';
+		$htmlShortCode .= '<div class="slideshow-page-header-container js-slideshow-slick" data-slideshow-type="slideshow-page-header">';
+			$htmlShortCode .= $slideContainer;
+		$htmlShortCode .= '</div>';
+		$htmlShortCode .= '<ul class="slideshow-page-header-dots js-slideshow-slick-pagination hide-for-large" data-slideshow-pagination="slideshow-page-header">';
+			$htmlShortCode .= $slidePagination;
+		$htmlShortCode .= '</ul>';
+		$htmlShortCode .= '<div class="slideshow-page-header-bottom">';
+			$htmlShortCode .= '<div class="section-container">';
+				$htmlShortCode .= '<div class="row margin-bottom-2x">';
+	               $htmlShortCode .= '<div class="column medium-12">';
+						$htmlShortCode .= '<nav class="slideshow-page-header-tabs js-slideshow-slick-pagination">';
+							$htmlShortCode .= '<ul data-slideshow-pagination="slideshow-page-header">';
+								$htmlShortCode .= $slideHeaderBottom;
+							$htmlShortCode .= '</ul>';
+						$htmlShortCode .= '</nav>';
 					$htmlShortCode .= '</div>';
 				$htmlShortCode .= '</div>';
+				/*$htmlShortCode .= '<div class="row align-center large-margin-bottom-1x">';
+					$htmlShortCode .= '<a href="#" class="header-scroll-icon">Scroll Down</a>';
+				$htmlShortCode .= '</div>';*/
 			$htmlShortCode .= '</div>';
 		$htmlShortCode .= '</div>';
 	}
 	return $htmlShortCode;
 }
 add_shortcode( 'slider', 'homepage_slider' );
+
+// [logo_slider name="foo-value"]
+function homepage_logo_slider( $atts ) {
+	$htmlShortCode = '';
+	$args = array(
+        'post_status' => 'inherit',
+        'post_type'=> 'attachment',
+        'post_mime_type' => 'image/jpeg,image/gif,image/jpg,image/png',
+		'meta_query'	=> array(
+			'relation'		=> 'AND',
+			array(
+				'key'		=> 'logo_slider_image',
+				'compare'	=> '=',
+				'value'		=> '1',
+			)
+		)
+	);
+	// query
+	$the_query = new WP_Query( $args );
+	if ($the_query->have_posts()):
+		$htmlShortCode .= '<div class="logo-carousel">';
+			$htmlShortCode .= '<div class="slideshow js-slideshow" data-slideshow-type="carousel-logos">';
+		while ( $the_query->have_posts() ) : $the_query->the_post(); 
+	         	$htmlShortCode .= '<div class="logo-carousel-item colour-fill-dark-grey">';
+	         		$htmlShortCode .= wp_get_attachment_image( get_the_ID(), 'full' );
+	         	$htmlShortCode .= '</div>';
+		endwhile;
+			$htmlShortCode .= '</div>';
+		$htmlShortCode .= '</div>';
+	endif;
+
+	return $htmlShortCode;
+}
+add_shortcode( 'logo_slider', 'homepage_logo_slider' );
+
+// [testimonials name="cat-slug" numberposts="3"]
+function uuam_testimonials( $atts ) {
+	$htmlShortCode = '';
+	$args = array(
+        'category_name' => $atts['name'],
+        'numberposts'=> $atts['numberposts']
+	);
+	// query
+	$the_query = new WP_Query( $args );
+	if ($the_query->have_posts()):
+		$htmlShortCode .= '<ul>';
+		while ( $the_query->have_posts() ) : $the_query->the_post(); 
+         	$htmlShortCode .= '<li>';
+				$htmlShortCode .= '<div class="testimonial-item-image">';
+				$htmlShortCode .= get_the_post_thumbnail(get_the_ID(), 'full' );
+				$htmlShortCode .= '</div>';
+				$htmlShortCode .= '<div class="testimonial-item-content">';
+				$htmlShortCode .= get_the_content(get_the_ID());
+				$htmlShortCode .= '</div>';
+				$htmlShortCode .= '<div class="testimonial-item-name">';
+				$htmlShortCode .= get_the_title(get_the_ID());
+				$htmlShortCode .= '</div>';
+			$htmlShortCode .= '</li>';
+		endwhile;
+		$htmlShortCode .= '</ul>';
+	endif;
+
+	return $htmlShortCode;
+}
+add_shortcode( 'testimonials', 'uuam_testimonials' );
+
+// [latest_projects name="cat-slug" numberposts="1"]
+function uuam_latest_projects( $atts ) {
+	$htmlShortCode = '';
+	$args = array(
+        'category_name' => $atts['name'],
+        'numberposts'=> $atts['numberposts'],
+        'orderby'          => 'date',
+		'order'            => 'DESC',
+	);
+	// query
+	$the_query = new WP_Query( $args );
+	if ($the_query->have_posts()):
+		$htmlShortCode .= '<div class="row">';
+		while ( $the_query->have_posts() ) : $the_query->the_post(); 
+         	$htmlShortCode .= '<div class="column medium-5 text-right">';
+				$htmlShortCode .= '<div class="projects-item-image"><a href="' . get_post_permalink(get_the_ID()) . '">';
+				$htmlShortCode .= get_the_post_thumbnail(get_the_ID(), 'full' );
+				$htmlShortCode .= '</a></div>';
+			$htmlShortCode .= '</div>';
+			$htmlShortCode .= '<div class="column medium-7 text-left">';
+				$htmlShortCode .= '<div class="projects-item-title">';
+				$htmlShortCode .= get_the_title(get_the_ID());
+				$htmlShortCode .= '</div>';
+				$htmlShortCode .= '<p><a class="readmore" href="' . get_post_permalink(get_the_ID()) . '">Read More</a></p>';
+			$htmlShortCode .= '</div>';
+		endwhile;
+		$htmlShortCode .= '</ul>';
+	endif;
+
+	return $htmlShortCode;
+}
+add_shortcode( 'latest_projects', 'uuam_latest_projects' );
 
 
 /**
