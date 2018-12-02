@@ -10,6 +10,12 @@
 
 ?>
 <div class="site-info">
-	<p>Copyright. Up Up Away Media, LLC. 2018.</p>
-	<p>All Rights Reserved. </p>
+	<div class="row">
+	<div class="column medium-12">
+		<div class="column medium-12">
+			<p>Copyright. Up Up Away Media, LLC. 2018.</p>
+			<p>All Rights Reserved. </p>
+		</div>
+	</div>
+	</div>
 </div><!-- .site-info -->
