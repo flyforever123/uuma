@@ -19819,7 +19819,7 @@ var windowResizeWidth = viewport.getWidth(),
         }
     };
 $(document).ready(function() {
-    environment.init(), viewport.init(), animateOnScroll.init(), gutterShapes.init(), slideshow.init(), parallax.init(), comeBackTitle.init(), sticky.init(), scrollTop.init(), grid.init(), cookieConsent.init(), lazyLoad.init(), dominantColour.init(), inviewThemeChange.init(), attractHover.init(), splitting.init(), lightbox.init(), textRotate.init(), slideshowSlick.init(), navigationOffcanvas.init(), filterTrigger.init(), freeform.init(), scrollTo.init(), sectionInview.init()
+    environment.init(), viewport.init(), animateOnScroll.init(), gutterShapes.init(), slideshow.init(), parallax.init(), comeBackTitle.init(), sticky.init(), scrollTop.init(), grid.init(), /*cookieConsent.init(),*/ lazyLoad.init(), dominantColour.init(), inviewThemeChange.init(), attractHover.init(), splitting.init(), lightbox.init(), textRotate.init(), slideshowSlick.init(), navigationOffcanvas.init(), filterTrigger.init(), freeform.init(), scrollTo.init(), sectionInview.init()
     var headerImageWidth = 1927;
     var headerImageHeiht = 741;
     var windowWidth = $(document).width();

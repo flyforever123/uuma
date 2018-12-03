@@ -164,10 +164,7 @@ screen and (min-width:40em) {
     .medium-12 {
         width: 100%
     }
-    .section-testimonials ul li {
-	    margin: 40px 20px;
-	    width: 375px;
-    }
+    
 }
 
 @media print,

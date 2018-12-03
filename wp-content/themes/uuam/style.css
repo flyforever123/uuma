@@ -1481,7 +1481,7 @@ a:hover .nav-title,
 	border: 0;
 	-webkit-box-shadow: none;
 	box-shadow: none;
-	color: #222;
+	color: #FFFFFF;
 	display: none;
 	font-size: 14px;
 	font-size: 0.875rem;
@@ -3490,6 +3490,7 @@ p > object:only-child {
     align-items: center;
     justify-content: center;
     border-radius: 30px 30px 0 0;
+    box-shadow: 0 45px 12px 0px #444;
 }
 .section-testimonials ul li:nth-child(1) {
 	margin-left: 0;
@@ -4690,7 +4691,39 @@ p > object:only-child {
 		margin-right: -20%;
 	}
 }
+@media screen and ( min-width: 1300px ) {
+
+	/*.section-container {
+		width: 1626px;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	.medium-12 {
+		padding-left: 60px !important;
+		padding-right: 60px !important;
+	}*/
+}
 @media screen and ( min-width: 1500px ) {
+
+	.section-container {
+		width: 1426px;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	.medium-12 {
+		padding-left: 40px !important;
+		padding-right: 40px !important;
+	}
+	.section-testimonials ul li {
+	    width: 395px;
+	    margin: 40px 39.5px;
+	}
+	.slideshow-page-header-title {
+		top: 25%;
+	}
+}
+
+@media screen and ( min-width: 1700px ) {
 
 	.section-container {
 		width: 1626px;
@@ -4701,13 +4734,95 @@ p > object:only-child {
 		padding-left: 60px !important;
 		padding-right: 60px !important;
 	}
+	.section-testimonials ul li {
+	    width: 405px;
+	    margin: 40px 70px;
+	}
 }
+
+
 
 @media screen and ( max-width: 48.875em ) and ( min-width: 48em ) {
 
 	.admin-bar .site-navigation-fixed.navigation-top,
 	.admin-bar .site-navigation-hidden.navigation-top {
 		top: 46px;
+	}
+	.section-testimonials ul li {
+	    margin: 40px 20px;
+	    width: 375px;
+    }
+
+}
+@media screen and (max-width: 767px) {
+	.section-quote .quote-frame ul li {
+		display: block;
+		width: 100%;
+	}
+	.section-quote .quote-frame {
+		width: auto;
+	}
+	.section-testimonials ul li, .section-testimonials ul li:nth-child(3) {
+		margin: 50px 0;
+		float: none;
+	    width: auto;
+	}
+	.section-our-services ul {
+	    display: table;
+	}
+	.section-our-services ul li {
+		display: flex;
+	    width: 100%;
+	}
+	.section-our-services ul li:before {
+		left: 0;
+	}
+	.row-eq-height {
+		display: block;
+	}
+	.slideshow-page-header-title {
+	    top: 30px;
+	    left: auto;
+	    margin-left: 0;
+	    position: relative;
+	    padding-left: 15px !important;
+    	padding-right: 15px !important;
+	}
+	.slideshow-page-header-image {
+		width: 100% !important;
+	}
+	.slideshow-page-header-slides .slideshow-page-header-title h1 .word {
+		font-size: 36px;
+	}
+	.slideshow-page-header-button {
+		margin-top: 40px;
+		display: block;
+	}
+	.section-projects .projects-item-title {
+		width: 100%;
+	}
+	.section-contact-us h2 {
+		font-size: 34px;
+	}
+	.main-navigation ul {
+		background: #272727;
+
+	}
+	#top-menu {
+		float: none;
+	    margin-right: 0;
+	    margin-top: 0;
+	    box-shadow: 4px 5px 9px 2px #666;
+	}
+	.site-content-contain {
+		padding-top: 52px;
+	}
+	.slideshow-page-header-slides .section-container {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+	.site-footer .colour-background-dark-grey, .site-footer .colour-background-light-light-grey {
+		padding-top: 30px;
 	}
 }
 
