@@ -55,8 +55,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: #fff;
-    font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #272727;
     font-weight: 400;
     line-height: 1.5;
     color: #5a5a5a;
@@ -3446,8 +3445,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: #fff;
-    font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #272727;
     font-weight: 400;
     line-height: 1.5;
     color: #5a5a5a;
@@ -14209,7 +14207,9 @@ body {
 
 .logo-carousel {
     display: block;
-    position: relative
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .logo-carousel-item {

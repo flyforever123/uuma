@@ -16236,7 +16236,7 @@ var debug = {
                             items: 4
                         },
                         1200: {
-                            items: 5
+                            items: 4
                         }
                     }
                 } : "slideshow-page-header" == o ? {
@@ -19820,6 +19820,11 @@ var windowResizeWidth = viewport.getWidth(),
     };
 $(document).ready(function() {
     environment.init(), viewport.init(), animateOnScroll.init(), gutterShapes.init(), slideshow.init(), parallax.init(), comeBackTitle.init(), sticky.init(), scrollTop.init(), grid.init(), cookieConsent.init(), lazyLoad.init(), dominantColour.init(), inviewThemeChange.init(), attractHover.init(), splitting.init(), lightbox.init(), textRotate.init(), slideshowSlick.init(), navigationOffcanvas.init(), filterTrigger.init(), freeform.init(), scrollTo.init(), sectionInview.init()
+    var headerImageWidth = 1927;
+    var headerImageHeiht = 741;
+    var windowWidth = $(document).width();
+    headerImageDivHeiht = parseInt(windowWidth * 741 / 1927);
+    $('.category-header').height(headerImageDivHeiht);
 }), $(window).resize(function() {
     $(window).width() != windowResizeWidth && (windowResizeWidth = viewport.getWidth()), sticky.resize(), gutterShapes.init()
 }), $(window).scroll(function() {

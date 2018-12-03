@@ -105,44 +105,7 @@ get_header(); ?>
 				</div>
 			</div>
 		</div>
-		<div class="section padding-0x section-quote">
-			<div class="colour-background-dark-grey section-homepage">
-				<div class="section-container">
-					<h2 class="align-center">Get a Quote</h2>
-					<div class="row">
-						<div class="column medium-12">
-							<div class="quote-frame colour-background-light-grey">
-								<h3>What services are you looking for?</h3>
-								<ul>
-									<li>
-										<p><img src="<?php echo get_theme_file_uri('/assets/images/website.png') ?>" alt="" /></p>
-										<p>Website</p>
-									</li>
-									<li>
-										<p><img src="<?php echo get_theme_file_uri('/assets/images/mobile-app.png') ?>" alt="" /></p>
-										<p>Mobile App</p>
-									</li>
-									<li>
-										<p><img src="<?php echo get_theme_file_uri('/assets/images/marketing.png') ?>" alt="" /></p>
-										<p>Marketing</p>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="section padding-0x section-contact-us">
-			<div class="colour-background-light-grey section-homepage">
-				<div class="section-container">
-					<h2 class="align-center">Let’s build something <br/>amazing together.</h2>
-					<div class="align-center">
-						<a href="#">REACH OUT</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 	</main><!-- #main -->
 </div><!-- #primary -->
 
