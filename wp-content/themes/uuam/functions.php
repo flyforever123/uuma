@@ -590,7 +590,7 @@ function homepage_slider( $atts ) {
 			$slideContainer .= '<div class="slideshow-page-header-slides">';
                	$slideContainer .= '<div class="section-container">';
                   	$slideContainer .= '<div class="row slideshow-page-header-row">';
-                     	$slideContainer .= '<div class="column small-medium-9 medium-6 large-6 small-padding-0x slideshow-page-header-title">';
+                     	$slideContainer .= '<div class="column small-padding-0x slideshow-page-header-title">';
                      		$slideContainer .= '<h3 class="large-margin-bottom-1-5x" data-splitting="words">';
                      			$slideContainer .= get_post_meta( get_the_ID(), "image_description", true );
                      		$slideContainer .= '</h3>';
