@@ -3688,6 +3688,10 @@ p > object:only-child {
     font-size: 72px;
     color: #FFFFFF;
 }
+.category-description p {
+	margin: 0;
+}
+
 .category-header {
 	height: 100vh;
 }
@@ -4802,7 +4806,7 @@ p > object:only-child {
 		width: 100%;
 	}
 	.section-contact-us h2 {
-		font-size: 34px;
+		font-size: 32px;
 	}
 	.main-navigation ul {
 		background: #272727;
@@ -4813,6 +4817,10 @@ p > object:only-child {
 	    margin-right: 0;
 	    margin-top: 0;
 	    box-shadow: 4px 5px 9px 2px #666;
+        padding: 0;
+	}
+	.main-navigation li {
+		float: none;
 	}
 	.site-content-contain {
 		padding-top: 52px;
@@ -4823,6 +4831,12 @@ p > object:only-child {
 	}
 	.site-footer .colour-background-dark-grey, .site-footer .colour-background-light-light-grey {
 		padding-top: 30px;
+	}
+	.category-description {
+	    font-size: 24px;
+	}
+	.testimonial-item-name {
+		width: auto;
 	}
 }
 

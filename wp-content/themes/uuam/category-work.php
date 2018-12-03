@@ -69,6 +69,7 @@ get_header(); ?>
 							</a>
 						</div>
 						<hr />
+						<span class="circle"></span>
 					</div>
 				
 				<?php endif;
