@@ -19483,6 +19483,8 @@ var _gsScope = "undefined" != typeof module && module.exports && "undefined" != 
             return e < r / 2 ? .5 * jQuery.easing.easeInBounce(t, 2 * e, 0, n, r) + i : .5 * jQuery.easing.easeOutBounce(t, 2 * e - r, 0, n, r) + .5 * n + i
         }
     });
+
+
 var windowResizeWidth = viewport.getWidth(),
     breakpoint = {
         small: 0,
@@ -19652,13 +19654,13 @@ var windowResizeWidth = viewport.getWidth(),
     },
     comeBackTitle = {
         init: function() {
-            var t = $("title"),
+            /*var t = $("title"),
                 e = t.text();
             $(window).blur(function() {
-                t.text("👋 " + e)
+                // t.text("👋 " + e)
             }), $(window).focus(function() {
                 t.text(e)
-            })
+            })*/
         }
     },
     parallax = {
@@ -19764,6 +19766,7 @@ var windowResizeWidth = viewport.getWidth(),
                 fade: !0,
                 cssEase: "linear",
                 draggable: !1,
+                lazyLoad: 'ondemand',
                 autoplay: !0,
                 autoplaySpeed: 4900,
                 pauseOnHover: !1,
@@ -19817,16 +19820,20 @@ var windowResizeWidth = viewport.getWidth(),
                 })
             })
         }
+    },
+	categoryInview = {
+        init: function() {
+            var headerImageWidth = 1927;
+            var headerImageHeiht = 741;
+            var windowWidth = $(document).width();
+            headerImageDivHeiht = parseInt(windowWidth * 741 / 1927);
+            $('.category-header').height(headerImageDivHeiht);
+        }
     };
 $(document).ready(function() {
-    environment.init(), viewport.init(), animateOnScroll.init(), gutterShapes.init(), slideshow.init(), parallax.init(), comeBackTitle.init(), sticky.init(), scrollTop.init(), grid.init(), /*cookieConsent.init(),*/ lazyLoad.init(), dominantColour.init(), inviewThemeChange.init(), attractHover.init(), splitting.init(), lightbox.init(), textRotate.init(), slideshowSlick.init(), navigationOffcanvas.init(), filterTrigger.init(), freeform.init(), scrollTo.init(), sectionInview.init()
-    var headerImageWidth = 1927;
-    var headerImageHeiht = 741;
-    var windowWidth = $(document).width();
-    headerImageDivHeiht = parseInt(windowWidth * 741 / 1927);
-    $('.category-header').height(headerImageDivHeiht);
+    environment.init(), viewport.init(), animateOnScroll.init(), /*gutterShapes.init(), */slideshow.init(), /*parallax.init(), comeBackTitle.init(), *//*sticky.init(), scrollTop.init(), *//*grid.init(), *//*cookieConsent.init(),*/ lazyLoad.init(), dominantColour.init(), inviewThemeChange.init(), /*attractHover.init(), splitting.init(), lightbox.init(), textRotate.init(), */slideshowSlick.init(), navigationOffcanvas.init(), /*filterTrigger.init(), freeform.init(), */scrollTo.init(), /*sectionInview.init(), */categoryInview.init()
 }), $(window).resize(function() {
-    $(window).width() != windowResizeWidth && (windowResizeWidth = viewport.getWidth()), sticky.resize(), gutterShapes.init()
+    $(window).width() != windowResizeWidth && (windowResizeWidth = viewport.getWidth()), sticky.resize(), gutterShapes.init(), categoryInview.init()
 }), $(window).scroll(function() {
     sectionInview.init()
 });

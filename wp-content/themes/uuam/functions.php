@@ -617,7 +617,7 @@ function homepage_slider( $atts ) {
 		endwhile;
 	endif;
 	if (!empty($slideContainer)) {
-		$htmlShortCode .= '<div class="slideshow-page-header-container js-slideshow-slick" data-slideshow-type="slideshow-page-header">';
+		$htmlShortCode .= '<div class="slideshow-page-header-container js-slideshow-slick slick-loading" data-slideshow-type="slideshow-page-header">';
 			$htmlShortCode .= $slideContainer;
 		$htmlShortCode .= '</div>';
 		$htmlShortCode .= '<ul class="slideshow-page-header-dots js-slideshow-slick-pagination hide-for-large" data-slideshow-pagination="slideshow-page-header">';
@@ -724,9 +724,9 @@ function uuam_latest_projects( $atts ) {
 		$htmlShortCode .= '<div class="row">';
 		while ( $the_query->have_posts() ) : $the_query->the_post(); 
          	$htmlShortCode .= '<div class="column medium-5 text-right">';
-				$htmlShortCode .= '<div class="projects-item-image"><a href="' . get_post_permalink(get_the_ID()) . '">';
+				$htmlShortCode .= '<div class="projects-item-image">';
 				$htmlShortCode .= get_the_post_thumbnail(get_the_ID(), 'full' );
-				$htmlShortCode .= '</a></div>';
+				$htmlShortCode .= '<a class="btn btn-white btn-no-bg" href="' . get_post_permalink(get_the_ID()) . '">'. __('Read more', 'uuam') .'</a></div>';
 			$htmlShortCode .= '</div>';
 			$htmlShortCode .= '<div class="column medium-7 text-left">';
 				$htmlShortCode .= '<div class="projects-item-title">';

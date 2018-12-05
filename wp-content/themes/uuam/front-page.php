@@ -27,7 +27,7 @@ get_header(); ?>
 					<div class="row">
 						<div class="column medium-10 large-8 xlarge-7 medium-centered align-center margin-bottom-5x medium-margin-bottom-2x large-margin-bottom-3x">
 							<h2 class="margin-bottom-0x">
-								We Aren’t Just a Web Design Agency.
+								We Aren’t <i class="blue-color">Just</i> a Web Design Agency.
 							</h2>
 							<p>We are a collective of individuals who care about what we do,<br /> who we work with, the businesses we partner with, and having fun.</p>
 						</div>
@@ -50,7 +50,7 @@ get_header(); ?>
 				<div class="section-container">
 					<div class="row row-eq-height">
 						<div class="column medium-5 align-center">
-							<h2 class="pull-right">We Combine Analytics <br />with Beautiful Design</h2>
+							<h2 class="pull-right">We Combine <span class="blue-color">Analytics</span> <br />with <span class="violet-color">Beautiful Design</span></h2>
 						</div>
 						<div class="column medium-7 align-left">
 							<img src="<?php echo get_theme_file_uri('/assets/images/') ?>combine_design_and_analytics.png" alt="" />
@@ -73,7 +73,7 @@ get_header(); ?>
 								<li>branding</li>
 							</ul>
 							<div class="align-center margin-top-70">
-								<a href="#" class="btn btn-white btn-15">LEARN MORE</a>
+								<a href="#" class="btn btn-15">LEARN MORE</a>
 							</div>
 						</div>
 					</div>
@@ -91,7 +91,7 @@ get_header(); ?>
 					</div>
 					<div class="row">
 						<div class="align-center margin-top-70">
-							<a href="#" class="btn btn-white btn-15">LEARN MORE</a>
+							<a href="#" class="btn btn-15">LEARN MORE</a>
 						</div>
 					</div>
 				</div>

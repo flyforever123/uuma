@@ -17,9 +17,9 @@ var ES = function() {}
 ES.prototype = {
 
 	init : function(form){
-		jQuery(form).bindFirst('submit', function(e) {
-			window.es.addSubscriber(e, jQuery(e.target));
-		}); // submit Event
+		// jQuery(form).bindFirst('submit', function(e) {
+			// window.es.addSubscriber(e, jQuery(e.target));
+		// }); // submit Event
 	},
 
 	addSubscriber : function(e, form) {

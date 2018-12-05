@@ -14,7 +14,7 @@
 		<?php
 		echo uuam_get_svg( array( 'icon' => 'bars' ) );
 		echo uuam_get_svg( array( 'icon' => 'close' ) );
-		_e( 'Menu', 'uuam' );
+		// _e( 'Menu', 'uuam' );
 		?>
 	</button>
 

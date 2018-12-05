@@ -277,34 +277,14 @@ screen and (min-width:64em) {
     content: "\f35b"
 }
 
-@font-face {
-    font-family: 'Font Awesome 5 Free';
-    font-style: normal;
-    font-weight: 400;
-    src: url(/assets/fonts/fa-regular-400.eot);
-    src: url(/assets/fonts/fa-regular-400.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/fa-regular-400.woff2) format("woff2"), url(/assets/fonts/fa-regular-400.woff) format("woff"), url(/assets/fonts/fa-regular-400.ttf) format("truetype"), url(/assets/fonts/fa-regular-400.svg#fontawesome) format("svg")
-}
+
 
 .far {
     font-family: 'Font Awesome 5 Free';
     font-weight: 400
 }
 
-@font-face {
-    font-family: 'Font Awesome 5 Free';
-    font-style: normal;
-    font-weight: 900;
-    src: url(/assets/fonts/fa-solid-900.eot);
-    src: url(/assets/fonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/fa-solid-900.woff2) format("woff2"), url(/assets/fonts/fa-solid-900.woff) format("woff"), url(/assets/fonts/fa-solid-900.ttf) format("truetype"), url(/assets/fonts/fa-solid-900.svg#fontawesome) format("svg")
-}
 
-@font-face {
-    font-family: circular;
-    src: url(/assets/fonts/lineto-circular-bold.eot);
-    src: url(/assets/fonts/lineto-circular-bold.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/lineto-circular-bold.woff2) format("woff2"), url(/assets/fonts/lineto-circular-bold.woff) format("woff"), url(/assets/fonts/lineto-circular-bold.ttf) format("truetype"), url(/assets/fonts/lineto-circular-bold.svg#lineto-circular-bold) format("svg");
-    font-weight: 700;
-    font-style: normal
-}
 
 body {
     -webkit-font-smoothing: antialiased;
@@ -645,11 +625,17 @@ a.colour-white {
 
 .slideshow-page-header {
     height: 100vh;
+    max-height: 66.67vw;
     position: relative
 }
 
 .slideshow-page-header-container {
     height: 100vh;
+    max-height: 66.67vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+    -webkit-transition: opacity 1s ease;
 }
 
 .slideshow-page-header-row {
@@ -747,6 +733,7 @@ a.colour-white {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     height: 100vh;
+    max-height: 66.67vw;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -885,7 +872,8 @@ a.colour-white {
 
 .slideshow-page-header .slick-slide-container,
 .slideshow-page-header .slick-slide-container>div {
-    height: 100vh
+    height: 100vh;
+    max-height: 66.67vw;
 }
 
 :root .align-center {
@@ -3127,7 +3115,9 @@ screen and (max-height:300px) {
 [dir=rtl] .slick-slide {
     float: right
 }
-
+.slideshow-page-header-row:not(:first-of-type) {
+  display: none;
+}
 .slick-slide img {
     display: block
 }
@@ -3157,7 +3147,10 @@ screen and (max-height:300px) {
 .slick-arrow.slick-hidden {
     display: none
 }
-
+.slideshow-page-header-container.slick-initialized {
+    visibility: visible;
+    opacity: 1;    
+}
 
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 
@@ -12002,38 +11995,18 @@ screen and (min-width:93.75em) {
     width: auto
 }
 
-@font-face {
-    font-family: 'Font Awesome 5 Brands';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../assets/fonts/fa-brands-400.eot);
-    src: url(../assets/fonts/fa-brands-400.eot?#iefix) format("embedded-opentype"), url(../assets/fonts/fa-brands-400.woff2) format("woff2"), url(../assets/fonts/fa-brands-400.woff) format("woff"), url(../assets/fonts/fa-brands-400.ttf) format("truetype"), url(../assets/fonts/fa-brands-400.svg#fontawesome) format("svg")
-}
-
 .fab {
     font-family: 'Font Awesome 5 Brands'
 }
 
-@font-face {
-    font-family: 'Font Awesome 5 Free';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../assets/fonts/fa-regular-400.eot);
-    src: url(../assets/fonts/fa-regular-400.eot?#iefix) format("embedded-opentype"), url(../assets/fonts/fa-regular-400.woff2) format("woff2"), url(../assets/fonts/fa-regular-400.woff) format("woff"), url(../assets/fonts/fa-regular-400.ttf) format("truetype"), url(../assets/fonts/fa-regular-400.svg#fontawesome) format("svg")
-}
+
 
 .far {
     font-family: 'Font Awesome 5 Free';
     font-weight: 400
 }
 
-@font-face {
-    font-family: 'Font Awesome 5 Free';
-    font-style: normal;
-    font-weight: 900;
-    src: url(../assets/fonts/fa-solid-900.eot);
-    src: url(../assets/fonts/fa-solid-900.eot?#iefix) format("embedded-opentype"), url(../assets/fonts/fa-solid-900.woff2) format("woff2"), url(../assets/fonts/fa-solid-900.woff) format("woff"), url(../assets/fonts/fa-solid-900.ttf) format("truetype"), url(../assets/fonts/fa-solid-900.svg#fontawesome) format("svg")
-}
+
 
 .fa,
 .fas,
@@ -12044,7 +12017,7 @@ screen and (min-width:93.75em) {
 }
 
 .slick-loading .slick-list {
-    background: #fff url(../assets/images/ajax-loader.gif) center center no-repeat
+    background: #fff url(../images/ajax-loader.gif) center center no-repeat
 }
 
 @font-face {
@@ -12211,13 +12184,7 @@ screen and (min-width:93.75em) {
     opacity: .75
 }
 
-@font-face {
-    font-family: circular;
-    src: url(../assets/fonts/lineto-circular-bold.eot);
-    src: url(../assets/fonts/lineto-circular-bold.eot?#iefix) format("embedded-opentype"), url(../assets/fonts/lineto-circular-bold.woff2) format("woff2"), url(../assets/fonts/lineto-circular-bold.woff) format("woff"), url(../assets/fonts/lineto-circular-bold.ttf) format("truetype"), url(../assets/fonts/lineto-circular-bold.svg#lineto-circular-bold) format("svg");
-    font-weight: 700;
-    font-style: normal
-}
+
 
 body {
     -webkit-font-smoothing: antialiased;
@@ -14755,6 +14722,7 @@ body {
 
 .slideshow-page-header-container {
     height: 100vh;
+    max-height: 66.67vw;
 }
 
 .slideshow-page-header-row {
@@ -14891,6 +14859,7 @@ body {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     height: 100vh;
+    max-height: 66.67vw;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -15014,7 +14983,8 @@ body {
     left: 0;
     width: 0%;
     height: 0;
-    background-color: #f06062
+    /* background-color: #f06062 */
+	background-image: linear-gradient(to right, #f1cfcf, #f06062);
 }
 
 @media screen and (max-width:63.9375em) {
@@ -15064,7 +15034,8 @@ body {
 .slideshow-page-header .slick-slide-container,
 .slideshow-page-header .slick-slide-container>div,
 .slideshow-page-header .slick-track {
-    height: 100vh
+    height: 100vh;
+    max-height: 66.67vw;
 }
 
 .social-navigation li {
